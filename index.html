@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>貼るだけメモ</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <style>
+    html, body {
+      margin: 0;
+      padding: 16px;
+      font-family: sans-serif;
+      font-size: 16px;
+      white-space: pre-wrap;
+      word-break: break-word;
+    }
+    body {
+      outline: none;
+    }
+  </style>
+</head>
+<body contenteditable="true">
+<script>
+  document.body.addEventListener('paste', (e) => {
+    e.preventDefault();
+    const text =
+      (e.clipboardData || window.clipboardData).getData('text/plain');
+    document.execCommand('insertText', false, text);
+  });
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>
